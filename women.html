@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dressify </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Left: Hamburger Menu -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <!-- Center: dressify Title -->
+        <div class="dressify-title">
+            <h1>Dressify</h1>
+        </div>
+
+        <!-- Right: Navbar Icons -->
+        <div class="icons">
+            
+            <div class="icon" title="Wishlist" onclick="toggleWishlist()">🖤</div>
+            <div class="icon" title="Cart" onclick="toggleCart()">🛒<span id="cartCount">0</span></div>
+        </div>
+    </div>
+
+    <!-- Hamburger Menu Content -->
+    <div class="hamburger-menu-content" id="hamburgerMenu">
+        <span class="close-btn" onclick="toggleMenu()">×</span>
+        <ul>
+            <li><a href='home.html'>Home &nbsp;</a></li>
+            <li><a href='about.html'>About &nbsp;</a></li>
+            <li><a href='women.html'>Women &nbsp;</a></li>
+            <li><a href='men section.html'>Men &nbsp;</a></li>
+            <li><a href='kids.html'>Kids &nbsp;</a></li>
+        </ul>
+    </div>
+
+    <!-- Popups for Login, Wishlist, and Cart -->
+    
+
+    <div id="wishlistPopup" class="popup">
+        <button class="close-btn" onclick="toggleWishlist()">×</button>
+        <h3>Your Wishlist</h3>
+        <p>Your wishlist is empty.</p>
+    </div>
+
+    <div id="cartPopup" class="popup">
+        <button class="close-btn" onclick="toggleCart()">×</button>
+        <h3>Your Cart</h3>
+        <p>Your cart is empty.</p>
+      
+    </div>
+
+    <div class="bracelet-banner">
+        <img src="women section.jpg" alt="women" class="bracelet-image">
+        <div class="bracelet-text">Women Section</div>
+    </div>
+
+
+
+    <section class="jewelry-section">
+       
+        <div class="gallery-jewelry">
+            
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="Women Coat.webp" alt="Women Coat" class="main-image">
+                    <img src="Women Coat.webp" alt="Women Coat" class="hover-image">
+                    <div class="best-seller-badge">Best Seller</div>
+                    <div class="buttons">
+                        <button id="searchBtn"   title="Maximize"onclick="showSearchPopup(15)"><img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+                        <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('Women Coat')">🖤</button>
+                        <button class="cart-btn" title="Add to Cart" onclick="addToCart('Women Coat', 5.99)">🛒</button>
+                    </div>
+                </div>
+                <p class="item-name">Women Coat </p>
+                <p class="item-price">
+                    <span class="current-price">$150.99</span>
+                    <span class="original-price">$180.99</span>
+                </p>
+            </div>
+      
+            <!-- Search Popup -->
+  <div id="searchPopup15" class="popup2">
+    <div class="popup-content">
+        <span class="close-button" onclick="closeSearchPopup(15)">×</span>
+  
+        
+        
+        <div class="product-details">
+          <div class="product-image">
+        <img src="Women Coat.webp" alt="Women Coat" class="popup-image"></div>
+        <div class="popup-info">
+            <p><strong>Product Name:</strong> Women Coat</p>
+            <p><strong>SKU#:</strong> 1000015</p>
+            <p><strong>Availability:</strong> In Stock</p>
+            <p><strong>Price:</strong> $5.99</p>
+           
+            <button class="add-to-cart-btn" onclick="addToCart('Women Coat', 150.99)">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="gallery-item">
+    <div class="image-container">
+        <img src="Black Feather Jacket.webp" alt="Black Feather Jacket" class="main-image">
+        <img src="Black Feather Jacket.webp" alt="Black Feather Jacket" class="hover-image">
+        <div class="best-seller-badge">Best Seller</div>
+        <div class="buttons">
+            <button id="searchBtn"  title="Maximize" onclick="showSearchPopup(4)"><img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+            <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('Black Feather Jacket')">🖤</button>
+            <button class="cart-btn" title="Add to Cart" onclick="addToCart('Black Feather Jacket', 39.99)">🛒</button>
+        </div>
+    </div>
+    <p class="item-name">Black Feather Jacket</p>
+    <p class="item-price">
+        <span class="current-price">$39.99</span>
+        <span class="original-price">$70.99</span>
+    </p>
+</div>
+
+<!-- Search Popup -->
+<div id="searchPopup4" class="popup2">
+<div class="popup-content">
+<span class="close-button" onclick="closeSearchPopup(4)">×</span>
+
+
+
+<div class="product-details">
+<div class="product-image">
+<img src="Black Feather Jacket.webp" alt="Black Feather Jacket" class="popup-image"></div>
+<div class="popup-info">
+<p><strong>Product Name:</strong> Black Feather Jacket</p>
+<p><strong>SKU#:</strong> 100004</p>
+<p><strong>Availability:</strong> In Stock</p>
+<p><strong>Price:</strong> $39.99</p>
+
+<button class="add-to-cart-btn" onclick="addToCart('Black Feather Jacket', 39.99)">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>
+<div class="gallery-item">
+    <div class="image-container">
+        <img src="Black Crop Top.webp" alt="Black Crop Top" class="main-image">
+        <img src="Black Crop Top.webp" alt="Black Crop Top" class="hover-image">
+        <div class="best-seller-badge">Best Seller</div>
+        <div class="buttons">
+            <button id="searchBtn"  title="Maximize" onclick="showSearchPopup(8)"><img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+            <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('Black Crop Top')">🖤</button>
+            <button class="cart-btn" title="Add to Cart" onclick="addToCart('Black Crop Top', 6.99)">🛒</button>
+        </div>
+    </div>
+    <p class="item-name">Black Crop Top</p>
+    <p class="item-price">
+        <span class="current-price">$6.99</span>
+        <span class="original-price">$12.99</span>
+    </p>
+</div>
+
+<!-- Search Popup -->
+<div id="searchPopup8" class="popup2">
+<div class="popup-content">
+<span class="close-button" onclick="closeSearchPopup(8)">×</span>
+
+
+
+<div class="product-details">
+<div class="product-image">
+<img src="Black Crop Top.webp" alt="Black Crop Top" class="popup-image"></div>
+<div class="popup-info">
+<p><strong>Product Name:</strong>Black Crop Top</p>
+<p><strong>SKU#:</strong> 100008</p>
+<p><strong>Availability:</strong> In Stock</p>
+<p><strong>Price:</strong> $6.99</p>
+
+<button class="add-to-cart-btn" onclick="addToCart('Black Crop Top', 6.99)">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>   
+ <div class="gallery-item">
+    <div class="image-container">
+        <img src="Denim Pants.webp" id="special-gift" alt="Denim Pants" class="main-image">
+        <img src="Denim Pants.webp" alt="Denim Pants" class="hover-image">
+        
+        <div class="buttons">
+            <button id="searchBtn"  title="Maximize" onclick="showSearchPopup(28)"><img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+            <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('Denim Pants')">🖤</button>
+            <button class="cart-btn" title="Add to Cart" onclick="addToCart('Denim Pants', 30.99)">🛒</button>
+        </div>
+    </div>
+    <p class="item-name">Denim Pants</p>
+    <p class="item-price">
+        <span class="current-price">$30.99</span>
+        <span class="original-price">$60.99</span>
+    </p>
+</div>
+
+<!-- Search Popup -->
+<div id="searchPopup28" class="popup2">
+<div class="popup-content">
+<span class="close-button" onclick="closeSearchPopup(28)">×</span>
+
+
+
+<div class="product-details">
+<div class="product-image">
+<img src="Denim Pants.webp" alt="Denim Pants" class="popup-image"></div>
+<div class="popup-info">
+<p><strong>Product Name:</strong>Denim Pants</p>
+<p><strong>SKU#:</strong> 1000028</p>
+<p><strong>Availability:</strong> In Stock</p>
+<p><strong>Price:</strong> $30.99</p>
+
+<button class="add-to-cart-btn" onclick="addToCart('Denim Pants', 30.99)">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>    
+<div class="gallery-item">
+    <div class="image-container">
+        <img src="Gucci Women Shirt.webp" alt="Gucci Women Shirt" class="main-image">
+        <img src="Gucci Women Shirt.webp" alt="Gucci Women Shirt" class="hover-image">
+        
+        <div class="buttons">
+            <button id="searchBtn"  title="Maximize" onclick="showSearchPopup(29)"><img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+            <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('Gucci Women Shirt')">🖤</button>
+            <button class="cart-btn" title="Add to Cart" onclick="addToCart('Gucci Women Shirt', 18.99)">🛒</button>
+        </div>
+    </div>
+    <p class="item-name">Gucci Women Shirt</p>
+    <p class="item-price">
+        <span class="current-price">$18.99</span>
+        <span class="original-price">$47.99</span>
+    </p>
+</div>
+
+<!-- Search Popup -->
+<div id="searchPopup29" class="popup2">
+<div class="popup-content">
+<span class="close-button" onclick="closeSearchPopup(29)">×</span>
+
+
+<div class="product-details">
+<div class="product-image">
+<img src="Gucci Women Shirt.webp" alt="Gucci Women Shirt" class="popup-image"></div>
+<div class="popup-info">
+<p><strong>Product Name:</strong> Gucci Women Shirt</p>
+<p><strong>SKU#:</strong> 1000029</p>
+<p><strong>Availability:</strong> In Stock</p>
+<p><strong>Price:</strong> $18.99</p>
+
+<button class="add-to-cart-btn" onclick="addToCart('Gucci Women Shirt', 18.99)">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>    
+<div class="gallery-item">
+    <div class="image-container"> 
+        <img src="white women dress.webp" alt="white women dress" class="main-image">
+        <img src="white women dress.webp" alt="white women dress" class="hover-image">
+        
+        <div class="buttons">
+            <button id="searchBtn"  title="Maximize" onclick="showSearchPopup(30)"><img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+            <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('white women dress')">🖤</button>
+            <button class="cart-btn" title="Add to Cart" onclick="addToCart('white women dress', 37.99)">🛒</button>
+        </div>
+    </div>
+    <p class="item-name">white women dress</p>
+    <p class="item-price">
+        <span class="current-price">$37.99</span>
+        <span class="original-price">$69.99</span>
+    </p>
+</div>
+
+<!-- Search Popup -->
+<div id="searchPopup30" class="popup2">
+<div class="popup-content">
+<span class="close-button" onclick="closeSearchPopup(30)">×</span>
+
+
+
+<div class="product-details">
+<div class="product-image">
+<img src="white women dress.webp" alt="white women dress" class="popup-image"></div>
+<div class="popup-info">
+<p><strong>Product Name:</strong>white women dress</p>
+<p><strong>SKU#:</strong> 1000030</p>
+<p><strong>Availability:</strong> In Stock</p>
+<p><strong>Price:</strong> $37.99</p>
+
+<button class="add-to-cart-btn" onclick="addToCart('Promise Crown Ring', 37.99)">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>    
+          </div>
+          </section>
+
+    <footer class="footer-section">
+        <div class="footer-container">
+            <!-- Contact Us Section -->
+            <div class="contact-us">
+                <h3>Contact Us</h3>
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="about">
+                <h3><a href='about.html'>About</a></h3>
+                <ul>
+                    <li><a href='women.html'>Women</a></li>
+                    <li><a href='men section.html'>Men</a></li>
+                    <li><a href='kids.html'>Kids</a></li>
+                </ul>
+            </div>
+            <!-- Social Media Section -->
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="facebook.svg" alt="Facebook" width="40" height="40">
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="instagram.svg" alt="Instagram" width="40" height="40">
+                    </a>
+                    <a href="https://www.pinterest.com" target="_blank">
+                        <img src="pinterest-180.svg" alt="Pinterest" width="40" height="40">
+                    </a>
+                </div>
+            </div>
+    
+        
+        </div>
+    
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Dressify. All rights reserved.</p>
+        </div>
+        
+            
+    </footer> 
+    <script src="script.js"></script>
+</body>
+</html>

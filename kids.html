@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dressify </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Left: Hamburger Menu -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <!-- Center: dressify Title -->
+        <div class="dressify-title">
+            <h1>Dressify</h1>
+        </div>
+
+        <!-- Right: Navbar Icons -->
+        <div class="icons">
+            
+            <div class="icon" title="Wishlist" onclick="toggleWishlist()">🖤</div>
+            <div class="icon" title="Cart" onclick="toggleCart()">🛒<span id="cartCount">0</span></div>
+        </div>
+    </div>
+
+    <!-- Hamburger Menu Content -->
+    <div class="hamburger-menu-content" id="hamburgerMenu">
+        <span class="close-btn" onclick="toggleMenu()">×</span>
+        <ul>
+            <li><a href='home.html'>Home &nbsp;</a></li>
+            <li><a href='about.html'>About &nbsp;</a></li>
+            <li><a href='women.html'>Women &nbsp;</a></li>
+            <li><a href='men section.html'>Men &nbsp;</a></li>
+            <li><a href='kids.html'>Kids &nbsp;</a></li>
+        </ul>
+    </div>
+
+    <!-- Popups for Login, Wishlist, and Cart -->
+   
+
+    <div id="wishlistPopup" class="popup">
+        <button class="close-btn" onclick="toggleWishlist()">×</button>
+        <h3>Your Wishlist</h3>
+        <p>Your wishlist is empty.</p>
+    </div>
+
+    <div id="cartPopup" class="popup">
+        <button class="close-btn" onclick="toggleCart()">×</button>
+        <h3>Your Cart</h3>
+        <p>Your cart is empty.</p>
+      
+    </div>
+    <div class="bracelet-banner">
+        <img src="kids.main.jpg" alt="Kids Section " class="bracelet-image">
+        <div class="bracelet-text">Kids Section</div>
+    </div>
+
+    <section class="jewelry-section">
+       
+        <div class="gallery-jewelry">
+            
+            <div class="gallery-item">
+                <div class="image-container">
+                    <img src="princess girl dress.webp" alt="Princess White Dress" class="main-image">
+                    <img src="princess girl dress.webp" alt="Princess White Dress" class="hover-image">
+                    <div class="best-seller-badge">Best Seller</div>
+                    <div class="buttons">
+                        <button id="searchBtn" title="Maximize" onclick="showSearchPopup(9)"><img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+                        <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('Princess White Dress')">🖤</button>
+                        <button class="cart-btn" title="Add to Cart" onclick="addToCart('Princess White Dress', 29.99)">🛒</button>
+                    </div>
+                </div>
+                <p class="item-name">Princess White Dress</p>
+                <p class="item-price">
+                    <span class="current-price">$29.99</span>
+                    <span class="original-price">$59.99</span>
+                </p>
+            </div>
+      
+            <!-- Search Popup -->
+            <div id="searchPopup9" class="popup2">
+                <div class="popup-content">
+                    <span class="close-button" onclick="closeSearchPopup(9)">×</span>
+                    <div class="product-details">
+                        <div class="product-image">
+                            <img src="princess girl dress.webp" alt="Princess White Dress" class="popup-image">
+                        </div>
+                        <div class="popup-info">
+                            <p><strong>Product Name:</strong> Princess White Dress</p>
+                            <p><strong>SKU#:</strong> 1000009</p>
+                            <p><strong>Availability:</strong> In Stock</p>
+                            <p><strong>Price:</strong> $29.99</p>
+                            <button class="add-to-cart-btn" onclick="addToCart('Princess White Dress', 29.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<div class="gallery-item">
+    <div class="image-container">
+        <img src="white dress kids.jpg" id="white-dress" alt="White Dress" class="main-image">
+        <img src="white dress kids.jpg" alt="White Dress" class="hover-image">
+        <div class="best-seller-badge">Best Seller</div>
+        <div class="buttons">
+            <button id="searchBtn" title="Maximize" onclick="showSearchPopup(50)"><img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+            <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('White Dress')">🖤</button>
+            <button class="cart-btn" title="Add to Cart" onclick="addToCart('White Dress', 25.99)">🛒</button>
+        </div>
+    </div>
+    <p class="item-name">White Dress</p>
+    <p class="item-price">
+        <span class="current-price">$25.99</span>
+        <span class="original-price">$50.99</span>
+    </p>
+</div>
+
+<!-- Search Popup -->
+<div id="searchPopup50" class="popup2">
+    <div class="popup-content">
+        <span class="close-button" onclick="closeSearchPopup(50)">×</span>
+        <div class="product-details">
+            <div class="product-image">
+                <img src="white dress kids.jpg" alt="White Dress" class="popup-image">
+            </div>
+            <div class="popup-info">
+                <p><strong>Product Name:</strong> White Dress</p>
+                <p><strong>SKU#:</strong> 1000050</p>
+                <p><strong>Availability:</strong> In Stock</p>
+                <p><strong>Price:</strong> $25.99</p>
+                <button class="add-to-cart-btn" onclick="addToCart('White Dress', 25.99)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gallery-item">
+    <div class="image-container">
+        <img src="Lovely Baby Girl Two Piece Sweater Dress Winter Dresses.webp" id="pearl-girl" alt="Lovely Baby Girl Two Piece Sweater Dress Winter Dresses" class="main-image">
+        <img src="Lovely Baby Girl Two Piece Sweater Dress Winter Dresses.webp" alt="Lovely Baby Girl Two Piece Sweater Dress Winter Dresses" class="hover-image">
+        <div class="best-seller-badge">Best Seller</div>
+        <div class="buttons">
+            <button class="search-btn" title="Maximize" onclick="showSearchPopup(13)"><img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+            <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('Lovely Baby Girl Two Piece Sweater Dress Winter Dresses')">🖤</button>
+            <button class="cart-btn" title="Add to Cart" onclick="addToCart('Lovely Baby Girl Two Piece Sweater Dress Winter Dresses', 15.99)">🛒</button>
+        </div>
+    </div>
+    <p class="item-name">Lovely Baby Girl Two Piece Sweater Dress Winter Dresses</p>
+    <p class="item-price">
+        <span class="current-price">$15.99</span>
+        <span class="original-price">$50.99</span>
+    </p>
+</div>
+</div>
+</div>
+</div>   
+          </div>
+          </section>
+  
+
+<footer class="footer-section">
+    <div class="footer-container">
+        <!-- Contact Us Section -->
+        <div class="contact-us">
+            <h3>Contact Us</h3>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="about">
+            <h3><a href='home.html'>Home</a></h3>
+            <ul>
+                <li><a href='women.html'>Women</a></li>
+                <li><a href='men section.html'>Men</a></li>
+                <li><a href='kids.html'>Kids</a></li>
+                <h3><a href='about.html'>About</a></h3>
+            </ul>
+        </div>
+        <!-- Social Media Section -->
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="facebook.svg" alt="Facebook" width="40" height="40">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="instagram.svg" alt="Instagram" width="40" height="40">
+                </a>
+                <a href="https://www.pinterest.com" target="_blank">
+                    <img src="pinterest-180.svg" alt="Pinterest" width="40" height="40">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright Section -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 Dressify. All rights reserved.</p>
+    </div>
+    
+        
+</footer> 
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dressify </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Left: Hamburger Menu -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <!-- Center: dressify Title -->
+        <div class="dressify-title">
+            <h1>Dressify</h1>
+        </div>
+
+        <!-- Right: Navbar Icons -->
+        <div class="icons">
+            
+            <div class="icon" title="Wishlist" onclick="toggleWishlist()">🖤</div>
+            <div class="icon" title="Cart" onclick="toggleCart()">🛒<span id="cartCount">0</span></div>
+        </div>
+    </div>
+
+    <!-- Hamburger Menu Content -->
+    <div class="hamburger-menu-content" id="hamburgerMenu">
+        <span class="close-btn" onclick="toggleMenu()">×</span>
+        <ul>
+            <li><a href='home.html'>Home &nbsp;</a></li>
+            <li><a href='about.html'>About &nbsp;</a></li>
+            <li><a href='women.html'>Women &nbsp;</a></li>
+            <li><a href='men section.html'>Men &nbsp;</a></li>
+            <li><a href='kids.html'>Kids &nbsp;</a></li>
+        </ul>
+    </div>
+
+    <!-- Popups for Login, Wishlist, and Cart -->
+    
+
+    <div id="wishlistPopup" class="popup">
+        <button class="close-btn" onclick="toggleWishlist()">×</button>
+        <h3>Your Wishlist</h3>
+        <p>Your wishlist is empty.</p>
+    </div>
+
+    <div id="cartPopup" class="popup">
+        <button class="close-btn" onclick="toggleCart()">×</button>
+        <h3>Your Cart</h3>
+        <div id="cartItems"></div>
+        <p id="cartTotal">Total Price: $0.00</p>
+        <p>Your cart is empty.</p>
+      
+    </div>
+
+    <div class="hero-section">
+        <img src="main image.jpg" alt="Collection" class="hero-image">
+        <div class="hero-overlay">
+            <button class="shop-now-btn" onclick="scrollToCategory()">Shop Now</button>
+        </div>
+    </div>
+   
+    <section class="gallery-section">
+      <h2 class="heading">Best Sellers</h2>
+      <div class="gallery">
+          
+          <div class="gallery-item">
+              <div class="image-container">
+                 <a href='Black Dress.webp'><img src="Black Dress.webp" alt="Black Dress" class="main-image">
+                  <img src="Black Dress.webp" alt="Black Dress" class="hover-image">
+                  <div class="best-seller-badge">Best Seller</div></a>
+                  <div class="buttons">
+                      <button id="searchBtn" title="Maximize"  onclick="showSearchPopup(1)"> <img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+                      <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('Black Dress')">🖤</button>
+                      <button class="cart-btn" title="Add to Cart" onclick="addToCart('Black Dress', 150.99)">🛒</button>
+                  </div>
+              </div>
+              <p class="item-name">Black Dress</p>
+              <p class="item-price">
+                  <span class="current-price">$150.99</span>
+                  <span class="original-price">$310.99</span>
+              </p>
+          </div>
+    
+          <!-- Search Popup -->
+<div id="searchPopup1" class="popup2">
+  <div class="popup-content">
+      <span class="close-button" onclick="closeSearchPopup(1)">×</span>
+
+      
+      <div class="product-details">
+        <div class="product-image">
+      <img src="Black Dress.webp" alt="Black Dress" class="popup-image"></div>
+      <div class="popup-info">
+          <p><strong>Product Name:</strong>Black Dress</p>
+          <p><strong>SKU#:</strong> 100001</p>
+          <p><strong>Availability:</strong> In Stock</p>
+          <p><strong>Price:</strong> $150.99</p>
+         
+          <button class="add-to-cart-btn" onclick="addToCart('Black Dress', 150.99)">Add to Cart</button>
+      </div>
+  </div>
+</div>
+</div>
+          <div class="gallery-item">
+            <div class="image-container">
+                <a href='princess girl dress.webp'><img src="princess girl dress.webp" alt="Princess Girl Dress" class="main-image">
+                <img src="bracelet2.jpg" alt="Lotus Bracelet" class="hover-image">
+                <div class="best-seller-badge">Best Seller</div></a>
+                <div class="buttons">
+                    <button class="search-btn" title="Maximize" onclick="showSearchPopup(2)"><img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+                    <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('Princess Girl Dress')">🖤</button>
+                    <button class="cart-btn" title="Add to Cart" onclick="addToCart('Princess Girl Dresset', 180.99)">🛒</button>
+                </div>
+            </div>
+            <p class="item-name">Princess Girl Dress</p>
+            <p class="item-price">
+                <span class="current-price">$180.99</span>
+                <span class="original-price">$250.99</span>
+            </p>
+        </div>
+        <div id="searchPopup2" class="popup2">
+          <div class="popup-content">
+              <span class="close-button" onclick="closeSearchPopup(2)">×</span>
+        
+              
+              <div class="product-details">
+                <div class="product-image">
+              <img src="princess girl dress.webp" alt="Princess Girl Dress" class="popup-image"></div>
+              <div class="popup-info">
+                  <p><strong>Product Name:</strong> Lotus Bracelet</p>
+                  <p><strong>SKU#:</strong> 100002</p>
+                  <p><strong>Availability:</strong> In Stock</p>
+                  <p><strong>Price:</strong> $180.99</p>
+                 
+                  <button class="add-to-cart-btn" onclick="addToCart('Princess Girl Dress', 180.99)">Add to Cart</button>
+              </div>
+          </div>
+        </div>
+        </div>
+        <div class="gallery-item">
+          <div class="image-container">
+              <a href='kids.html'><img src="white dress kids.jpg" alt="White Dress" class="main-image">
+              <img src="white dress kids.jpg" alt="White Dress" class="hover-image">
+              <div class="best-seller-badge">Best Seller</div></a>
+              <div class="buttons">
+                  <button class="search-btn" class="searchbtn" title="Maximize" onclick="showSearchPopup(3)"><img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+                  <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('White Dress')">🖤</button>
+                  <button class="cart-btn" title="Add to Cart" onclick="addToCart('White Dress', 100.99)">🛒</button>
+
+              </div>
+          </div>
+          <p class="item-name">White Dress</p>
+          <p class="item-price">
+              <span class="current-price">$100.99</span>
+              <span class="original-price">$250.99</span>
+          </p>
+      </div>
+      <div id="searchPopup3" class="popup2">
+        <div class="popup-content">
+            <span class="close-button" onclick="closeSearchPopup(3)">×</span>
+      
+            <div class="product-details">
+              <div class="product-image">
+            <img src="white dress kids.jpg" alt="White Dress" class="popup-image"></div>
+            <div class="popup-info">
+                <p><strong>Product Name:</strong> White Dress</p>
+                <p><strong>SKU#:</strong> 100003</p>
+                <p><strong>Availability:</strong> In Stock</p>
+                <p><strong>Price:</strong> $100.99</p>
+               
+                <button class="add-to-cart-btn" onclick="addToCart('Lotus Earrings', 10.99)">Add to Cart</button>
+            </div>
+        </div>
+      </div>
+      </div>
+      <div class="gallery-item">
+        <div class="image-container">
+            <a href='men section.html'><img src="SweatShirt.webp" alt="SweatShirt" class="main-image">
+            <img src="SweatShirt.webp" alt="SweatShirt" class="hover-image">
+            <div class="best-seller-badge">Best Seller</div></a>
+            <div class="buttons">
+                <button class="search-btn" title="Maximize" onclick="showSearchPopup(4)"><img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+                <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('SweatShirt')">🖤</button>
+                <button class="cart-btn" title="Add to Cart" onclick="addToCart('SweatShirt', 39.99)">🛒</button>
+            </div>
+        </div>
+        <p class="item-name">SweatShirt</p>
+        <p class="item-price">
+            <span class="current-price">$39.99</span>
+            <span class="original-price">$70.99</span>
+        </p>
+    </div>
+    <div id="searchPopup4" class="popup2">
+      <div class="popup-content">
+          <span class="close-button" onclick="closeSearchPopup(4)">×</span>
+    
+         
+          <div class="product-details">
+            <div class="product-image">
+          <img src="SweatShirt.webp" alt="Lotus Ring" class="popup-image"></div>
+          <div class="popup-info">
+              <p><strong>Product Name:</strong> SweatShirt</p>
+              <p><strong>SKU#:</strong> 100004</p>
+              <p><strong>Availability:</strong> In Stock</p>
+              <p><strong>Price:</strong> $39.99</p>
+             
+              <button class="add-to-cart-btn" onclick="addToCart('Lotus Ring', 39.99)">Add to Cart</button>
+          </div>
+      </div>
+    </div>
+    </div>
+    <div class="gallery-item">
+      <div class="image-container">
+         <a href='women.html'> <img src="Women Coat.webp" alt="Women Coat" class="main-image">
+          <img src="Women Coat.webp" alt="Women Coat" class="hover-image">
+          <div class="best-seller-badge">Best Seller</div></a>
+          <div class="buttons">
+              <button class="search-btn" title="Maximize" onclick="showSearchPopup(5)"><img src="maximize-svgrepo-com.svg" alt="Maximize Icon" width="20" height="20"></button>
+              <button class="wishlist-btn" title="Add to Wishlist" onclick="addToWishlist('Women Coat')">🖤</button>
+              <button class="cart-btn" title="Add to Cart" onclick="addToCart('Women Coat', 130.99)">🛒</button>
+          </div>
+      </div>
+      <p class="item-name">Women Coat</p>
+      <p class="item-price">
+          <span class="current-price">$130.99</span>
+          <span class="original-price">$166.99</span>
+      </p>
+  </div>
+  <div id="searchPopup5" class="popup2">
+    <div class="popup-content">
+        <span class="close-button" onclick="closeSearchPopup(5)">×</span>
+  
+       
+        
+        <div class="product-details">
+          <div class="product-image">
+        <img src="Women Coat.webp" alt="Women Coat" class="popup-image"></div>
+        <div class="popup-info">
+            <p><strong>Product Name:</strong>Women Coat </p>
+            <p><strong>SKU#:</strong> 100005</p>
+            <p><strong>Availability:</strong> In Stock</p>
+            <p><strong>Price:</strong> $130.99</p>
+           
+            <button class="add-to-cart-btn" onclick="addToCart('Globe Earth Necklace', 30.99)">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+  </div>
+      <section class="dressify">
+        <div class="dressify-content">
+          <div class="dressify-text">
+            <h2>Dressify</h2>
+            <p>Dressify offers exquisite, handcrafted clothed pieces, designed to add a touch of elegance to any occasion. Explore our collection of unique SETS.</p>
+            <a class='read-me-button' href='about.html'>Read Me</a>
+          </div>
+          <div class="dressify-image">
+            <img src="women section.jpg" alt="Dressify">
+          </div>
+        </div>
+      </section>
+      <section id="why-choose">
+        <h2>Why Choose Our Clothes?</h2>
+        <div class="features-container">
+          <div class="feature">
+            <img src="feature1.png" alt="Waterproof">
+            <p>Waterproof</p>
+          </div>
+          <div class="feature">
+            <img src="feature2.png" alt="Tarnish Resistant">
+            <p>Tarnish Resistant</p>
+          </div>
+          <div class="feature">
+            <img src="feature3.png" alt="Safe for Sensitive Skin">
+            <p>Safe for Sensitive Skin</p>
+          </div>
+        </div>
+      </section>
+      <div class="package-section">
+        <div class="package-text">
+          <h2>Beautiful From The Inside Out</h2>
+          <p>Your order is sublimated in a distinctive Dressify package.  
+             We promise you a unique experience from the moment you put your eyes on it.</p>
+        </div>
+        <div class="package-image">
+          <img src="women section.jpg" alt="Package" />
+        </div>
+      </div>
+      <div class="reviews-section">
+        <h2>Our Customers Speak for Us</h2>
+        <div class="carousel">
+          <button class="carousel-arrow left-arrow"> &#11160;</button>
+          <div class="carousel-track">
+            <!-- Review 1 -->
+            <div class="review-card">
+              <h3>John Doe</h3>
+              <div class="stars">★★★★★</div>
+              <p>Great product! Highly recommend.</p>
+              <div class="product">
+                <img src="SweatShirt.webp" alt="Product 1">
+                <a href='men section.html'><p>SweatShirt</p></a>
+              </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="review-card">
+              <h3>lLora</h3>
+              <div class="stars">★★★★☆</div>
+              <p>Good quality, but took a while to arrive.</p>
+              <div class="product">
+                <img src="Women Coat.webp" alt="Product 2">
+               <a href='women section.jpg'> <p>Women Coat</p></a>
+              </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="review-card">
+              <h3>Mariam</h3>
+              <div class="stars">★★★☆☆</div>
+              <p>The product was okay, but not what I expected.</p>
+              <div class="product">
+                <img src="blue girl set.jpg" alt="Product 3">
+               <a href='kids.html'> <p>Blue Girl Set</p></a>
+              </div>
+            </div>
+            <!-- Review 4 -->
+            <div class="review-card">
+              <h3>Mhmd</h3>
+              <div class="stars">★★★★★</div>
+              <p>Absolutely amazing! Loved the design.</p>
+              <div class="product">
+                <img src="Black Jacket2.webp" alt="Product 4">
+               <a href='men section.html'><p>Black Jacket</p></a>
+              </div>
+            </div>
+            <!-- Review 5 -->
+            <div class="review-card">
+              <h3>Linda </h3>
+              <div class="stars">★★★☆☆</div>
+              <p>It was fine, but I expected better packaging.</p>
+              <div class="product">
+                <img src="Black Feather Jacket.webp" alt="Product 5">
+                <a href='/rings#heart'> <p>Black Feather Jacket</p></a>
+              </div>
+            </div>
+            <!-- Review 6 -->
+            <div class="review-card">
+              <h3>Sarah</h3>
+              <div class="stars">★★★★☆</div>
+              <p>Good quality, looks great with most outfits.</p>
+              <div class="product">
+              <img src="Denim Pants.webp" alt="Product 6"></a>
+              <a href='women section.jpg'> <p>Denim Pants</p></a>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-arrow right-arrow">&#x2B9A;</button>
+        </div>
+        <div class="carousel-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+    </div>
+    </div>
+    </div>    
+              </div>
+              </section>
+      <footer class="footer-section">
+        <div class="footer-container">
+            <!-- Contact Us Section -->
+            <div class="contact-us">
+                <h3>Contact Us</h3>
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="about">
+              <h3><a href='home.html'>Home</a></h3>
+              <ul>
+                  <li><a href='women.html'>Women</a></li>
+                  <li><a href='men section.html'>Men</a></li>
+                  <li><a href='kids.html'>Kids</a></li>
+                  <h3><a href='about.html'>About</a></h3>
+              </ul>
+          </div>
+            <!-- Social Media Section -->
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="facebook.svg" alt="Facebook" width="40" height="40">
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="instagram.svg" alt="Instagram" width="40" height="40">
+                    </a>
+                    <a href="https://www.pinterest.com" target="_blank">
+                        <img src="pinterest-180.svg" alt="Pinterest" width="40" height="40">
+                    </a>
+                </div>
+            </div>
+    
+        
+        </div>
+    
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Dressify. All rights reserved.</p>
+        </div>
+        
+    </footer> 
+    <script src="script.js"></script>
+</body>
+</html>

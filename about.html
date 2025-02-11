@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dressify </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Left: Hamburger Menu -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <!-- Center: dressify Title -->
+        <div class="dressify-title">
+            <h1>Dressify</h1>
+        </div>
+
+        <!-- Right: Navbar Icons -->
+        <div class="icons">
+            
+            <div class="icon" title="Wishlist" onclick="toggleWishlist()">🖤</div>
+            <div class="icon" title="Cart" onclick="toggleCart()">🛒<span id="cartCount">0</span></div>
+        </div>
+    </div>
+
+    <!-- Hamburger Menu Content -->
+    <div class="hamburger-menu-content" id="hamburgerMenu">
+        <span class="close-btn" onclick="toggleMenu()">×</span>
+        <ul>
+            <li><a href='index.html'>Home &nbsp;</a></li>
+            <li><a href='about.html'>About &nbsp;</a></li>
+            <li><a href='women.html'>Women &nbsp;</a></li>
+            <li><a href='men section.html'>Men &nbsp;</a></li>
+            <li><a href='kids.html'>Kids &nbsp;</a></li>
+
+        </ul>
+    </div>
+
+    <!-- Popups for Login, Wishlist, and Cart -->
+  
+
+    <div id="wishlistPopup" class="popup">
+        <button class="close-btn" onclick="toggleWishlist()">×</button>
+        <h3>Your Wishlist</h3>
+        <p>Your wishlist is empty.</p>
+    </div>
+
+    <div id="cartPopup" class="popup">
+        <button class="close-btn" onclick="toggleCart()">×</button>
+        <h3>Your Cart</h3>
+        <p>Your cart is empty.</p>
+      
+    </div>
+
+
+    <div class="bracelet-banner">
+        <img src="main image.jpg" alt="about" class="bracelet-image">
+        <div class="bracelet-text">About Us</div>
+    </div>
+
+    <section class="about-section">
+        <h1>About Dressify</h1>
+        <div class="about-content">
+            <p class="intro">At Dressify, we are passionate about crafting timeless and elegant clothes that enhances your natural beauty. Founded with a vision to provide high-quality and unique designs, we take pride in being a trusted name for those seeking sophistication and style.</p>
+        </div>
+    
+        <div class="mission-vision">
+            <div class="box">
+                <h2>Our Mission</h2>
+                <p>To bring sparkle to your special moments. Whether it's a gift for a loved one or a personal treat, we believe every piece of clothes should tell a story and make you feel extraordinary.</p>
+            </div>
+            <div class="box">
+                <h2>Our Vision</h2>
+                <p>Dressify draws inspiration from the beauty of nature, cultural heritage, and modern trends. Our designs combine tradition and innovation to create pieces that resonate with everyone.</p>
+            </div>
+        </div>
+    
+        <h2>What We Offer</h2>
+        <ul class="offerings">
+            <li><strong>Tops:</strong> Trendy and comfortable shirts, blouses, and tees.</li>
+            <li><strong>Bottoms:</strong> Stylish jeans, skirts, and trousers for every occasion.</li>
+            <li><strong>Outerwear:</strong> Cozy jackets and elegant coats to elevate your look.</li>
+        </ul>
+    
+        <h2>Why Choose Us?</h2>
+        <ul class="reasons">
+            <li><strong>Exceptional Quality:</strong> Premium fabrics and stitching for lasting wear.</li>
+            <li><strong>Trendy Styles:</strong> Stay ahead with the latest fashion collections.</li>
+            <li><strong>Affordable Prices:</strong> Stylish outfits that fit your budget.</li>
+            <li><strong>Customer First:</strong> A seamless shopping experience with dedicated support.</li>
+        </ul>
+        <h2>Get in Touch</h2>
+        <p>We love hearing from fashion enthusiasts! Whether you have questions about our collections, need styling advice, or want to share your shopping experience, feel free to reach out.</p>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-container">
+            <!-- Contact Us Section -->
+            <div class="contact-us">
+                <h3>Contact Us</h3>
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="about">
+              <h3><a href='home.html'>Home</a></h3>
+              <ul>
+                  <li><a href='women section.jpg'>Women</a></li>
+                  <li><a href='men section.html'>Men</a></li>
+                  <li><a href='kids.html'>Kids</a></li>
+                  <li><a href='about.html'>About</a></li>
+              </ul>
+          </div>
+            <!-- Social Media Section -->
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="facebook.svg" alt="Facebook" width="40" height="40">
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="instagram.svg" alt="Instagram" width="40" height="40">
+                    </a>
+                    <a href="https://www.pinterest.com" target="_blank">
+                        <img src="pinterest-180.svg" alt="Pinterest" width="40" height="40">
+                    </a>
+                </div>
+            </div>
+    
+        
+        </div>
+    
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Dressify. All rights reserved.</p>
+        </div>
+        
+    </footer> 
+    <script src="script.js"></script>
+</body>
+</html>
